@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.lingo.jetpack.R
 import com.lingo.jetpack.databinding.ActivityLoginBinding
+import com.lingo.jetpack.notification.NotificationUtils
 import com.lingo.jetpack.ui.settings.SettingsActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -98,6 +99,14 @@ class LoginActivity : AppCompatActivity() {
 
         binder.settings.setOnClickListener {
             startActivity(Intent(this@LoginActivity, SettingsActivity::class.java))
+        }
+
+        binder.bubble.setOnClickListener {
+            NotificationUtils.showNotification(
+                this@LoginActivity, 1, NotificationUtils.createAlertNotificationBuilder(
+                    this@LoginActivity, "测试", "只是一个测试而已"
+                )
+            )
         }
     }
 

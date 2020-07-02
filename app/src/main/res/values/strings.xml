@@ -1,16 +1,19 @@
 <resources>
-    <string name="app_name">Jetpack</string>
+    <string name="app_name">果子牛</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_settings">设置</string>
+    <string name="action_bubble">气泡</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_bubble">BubbleActivity</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
@@ -26,4 +29,12 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="channel_alert_id">alert</string>
+    <string name="channel_alert_name">闹钟</string>
+    <string name="channel_alert_desc">你定的闹钟</string>
+
+    <string name="channel_message_id">message</string>
+    <string name="channel_message_name">消息</string>
+    <string name="channel_message_desc">你收到的消息</string>
 </resources>
