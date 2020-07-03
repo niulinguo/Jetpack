@@ -16,6 +16,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.lingo.jetpack.R
 import com.lingo.jetpack.databinding.ActivityLoginBinding
+import com.lingo.jetpack.intent.IntentUtils
+import com.lingo.jetpack.intent.PendingIntentUtils
+import com.lingo.jetpack.notification.NotificationActionUtils
 import com.lingo.jetpack.notification.NotificationUtils
 import com.lingo.jetpack.ui.settings.SettingsActivity
 
@@ -102,9 +105,23 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binder.bubble.setOnClickListener {
+            val context = this@LoginActivity
+            val notificationId = 1
             NotificationUtils.showNotification(
-                this@LoginActivity, 1, NotificationUtils.createAlertNotificationBuilder(
-                    this@LoginActivity, "测试", "只是一个测试而已"
+                context, notificationId, NotificationUtils.createAlertNotificationBuilder(
+                    context, "测试", "只是一个测试而已",
+                    PendingIntentUtils.activityPendingIntent(
+                        context,
+                        IntentUtils.openSettingsWithNewTaskIntent(context)
+                    )
+                ).addAction(
+                    NotificationActionUtils.createTestActionBuilder(
+                        context,
+                        PendingIntentUtils.broadcastPendingIntent(
+                            context,
+                            IntentUtils.sendTestBroadcast(context, notificationId)
+                        )
+                    ).build()
                 )
             )
         }

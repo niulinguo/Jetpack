@@ -37,4 +37,6 @@
     <string name="channel_message_id">message</string>
     <string name="channel_message_name">消息</string>
     <string name="channel_message_desc">你收到的消息</string>
+
+    <string name="notification_action_test">测试</string>
 </resources>
