@@ -107,6 +107,7 @@ class LoginActivity : AppCompatActivity() {
         binder.bubble.setOnClickListener {
             val context = this@LoginActivity
             val notificationId = 1
+            val replyId = 2
             NotificationUtils.showNotification(
                 context, notificationId, NotificationUtils.createAlertNotificationBuilder(
                     context, "测试", "只是一个测试而已",
@@ -120,6 +121,12 @@ class LoginActivity : AppCompatActivity() {
                         PendingIntentUtils.broadcastPendingIntent(
                             context,
                             IntentUtils.sendTestBroadcast(context, notificationId)
+                        )
+                    ).build()
+                ).addAction(
+                    NotificationActionUtils.createTestReplyActionBuilder(
+                        context, PendingIntentUtils.broadcastReplyPendingIntent(
+                            context, replyId, IntentUtils.sendTestBroadcast(context, notificationId)
                         )
                     ).build()
                 )

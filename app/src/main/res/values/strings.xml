@@ -39,4 +39,8 @@
     <string name="channel_message_desc">你收到的消息</string>
 
     <string name="notification_action_test">测试</string>
+    <string name="notification_action_test_input_label">回复</string>
+
+    <string name="notification_key_reply">reply</string>
+    <string name="notification_key_id">notification_id</string>
 </resources>

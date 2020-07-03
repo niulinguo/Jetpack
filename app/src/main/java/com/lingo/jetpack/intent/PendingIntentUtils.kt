@@ -13,4 +13,13 @@ object PendingIntentUtils {
     fun broadcastPendingIntent(context: Context, intent: Intent): PendingIntent {
         return PendingIntent.getBroadcast(context, 0, intent, 0)
     }
+
+    fun broadcastReplyPendingIntent(context: Context, replyId: Int, intent: Intent): PendingIntent {
+        return PendingIntent.getBroadcast(
+            context,
+            replyId,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+    }
 }
